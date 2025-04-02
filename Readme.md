@@ -1,8 +1,6 @@
 🚀 ResearchGPT 🔬🤖
 Unlock the Power of AI for Research Papers!
 
-(Optional: Add a banner image for better appeal)
-
 🌟 Introduction
 ResearchGPT is an advanced AI-powered research assistant that allows users to upload research papers (PDFs) and interact with them through a conversational AI. It leverages Google Gemini AI for intelligent responses while utilizing vector storage with FAISS for document retrieval, ensuring contextually relevant answers.
 
@@ -29,12 +27,12 @@ Technology	Usage
 🤖 LangChain	Manages conversational AI
 🔥 Google Gemini AI	Generates intelligent responses
 Workflow
-1️⃣ User uploads a PDF document.
-2️⃣ The text is extracted & converted into embeddings.
-3️⃣ FAISS stores embeddings for efficient retrieval.
-4️⃣ User asks a question related to the document.
-5️⃣ AI retrieves relevant context and generates a response.
-6️⃣ The response is displayed with source references.
+1️User uploads a PDF document.
+2️The text is extracted & converted into embeddings.
+3️FAISS stores embeddings for efficient retrieval.
+4️User asks a question related to the document.
+5️AI retrieves relevant context and generates a response.
+6️The response is displayed with source references.
 
 🎬 Demo
 🚀 Try it out: Live Demo (Optional)
