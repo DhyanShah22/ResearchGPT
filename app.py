@@ -14,7 +14,7 @@ st.set_page_config(page_title="ResearchGPT 🔬🤖", page_icon="📚")
 with st.sidebar:
     st.title("📌 ResearchGPT 🔬🤖")
     st.markdown("### **🔍 Features**")
-    st.markdown("- Upload a **PDF** 📄")
+    st.markdown("- Upload a **Research Paper** 📄")
     st.markdown("- Ask **questions** 🤖")
     st.markdown("- Get **instant answers** ⚡")
     
@@ -22,13 +22,16 @@ with st.sidebar:
     
     st.subheader("⚙️ **Settings**")
     dark_mode = st.checkbox("🌙 Enable Dark Mode")
+    temperature = st.slider("🎛 Set Answer Randomness (Temperature)", 0.0, 1.0, 0.7, 0.1)
     
     st.markdown("---")
     st.info("Developed by **Dhyan Shah**", icon="💡")
     st.caption("📌 Version: 1.0.0")
     
 # Set up API Key
-GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
+# GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
+import streamlit as st
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
 # Define data directory
 DATA_DIR = "data"
@@ -91,7 +94,7 @@ if uploaded_file:
     chat_model = ChatGoogleGenerativeAI(
         model="gemini-1.5-pro",
         google_api_key=GEMINI_API_KEY,
-        temperature=0.7,
+        temperature=temperature,  # Use user-selected temperature
         credentials=None,
         convert_system_message_to_human=True
     )
@@ -146,4 +149,4 @@ if uploaded_file:
 
                 except Exception as e:
                     st.error(f"Error generating response: {str(e)}")
-                    st.exception(e)  # This will print the full traceback
+                    st.exception(e)
