@@ -1,99 +1,113 @@
-ResearchGPT 🧠📚
-AI-Powered Research Paper Assistant
+🚀 ResearchGPT 🔬🤖
+Unlock the Power of AI for Research Papers!
 
-🚀 ResearchGPT is an intelligent chatbot designed to help researchers, students, and professionals analyze research papers efficiently. By leveraging Retrieval-Augmented Generation (RAG), vector databases, and LLMs, it enables interactive, context-aware conversations with research papers.
+(Optional: Add a banner image for better appeal)
 
-🔹 Features
-✅ Upload Research Papers – Easily upload PDFs and interact with them.
-✅ Instant Insights – No need to skim through pages—just ask and get precise answers.
-✅ Complex Concept Explanation – Breaks down difficult research topics into simple explanations.
-✅ Reliable & Transparent – Every response is backed by original sources.
-✅ Interactive & Context-Aware – Remembers past queries for a more natural conversation.
+🌟 Introduction
+ResearchGPT is an advanced AI-powered research assistant that allows users to upload research papers (PDFs) and interact with them through a conversational AI. It leverages Google Gemini AI for intelligent responses while utilizing vector storage with FAISS for document retrieval, ensuring contextually relevant answers.
 
-🛠️ Tech Stack
-Frontend:
-Streamlit 🖥️ – Provides an interactive UI for chatting with PDFs.
+With ResearchGPT, you can:
+✅ Upload research papers and extract insights effortlessly.
+✅ Ask questions related to the uploaded document.
+✅ Receive AI-powered responses with source references.
+✅ Enhance your research workflow like never before!
 
-Backend:
-Django 🕸️ – Manages API requests and handles document processing.
+🔥 Features
+✔ Seamless PDF Upload – Upload any research paper in PDF format.
+✔ Smart AI Responses – Get answers using Google Gemini AI & Vector Storage.
+✔ Conversational Memory – Retains chat history for continuity.
+✔ Instant Search & Retrieval – Uses FAISS for efficient document searching.
+✔ User-friendly UI – Built with Streamlit for an intuitive experience.
+✔ Privacy-focused – Runs locally with no data stored externally.
 
-LangChain 🧠 – Enables interaction with LLMs and retrieval-based querying.
+🏗 Tech Stack & Architecture
+Technology	Usage
+🐍 Python	Core backend logic
+🎈 Streamlit	Interactive UI
+📄 PyPDFLoader	Extracts text from PDFs
+🏗 FAISS	Vector search for document retrieval
+🤖 LangChain	Manages conversational AI
+🔥 Google Gemini AI	Generates intelligent responses
+Workflow
+1️⃣ User uploads a PDF document.
+2️⃣ The text is extracted & converted into embeddings.
+3️⃣ FAISS stores embeddings for efficient retrieval.
+4️⃣ User asks a question related to the document.
+5️⃣ AI retrieves relevant context and generates a response.
+6️⃣ The response is displayed with source references.
 
-FAISS (Facebook AI Similarity Search) 📌 – Efficiently indexes and retrieves document embeddings.
+🎬 Demo
+🚀 Try it out: Live Demo (Optional)
 
-Google Gemini AI 🤖 – Powers LLM responses and embeddings.
+(Optional: Add a screenshot of the app in action)
 
-Storage & Data Handling:
-Vector Database (FAISS) – Stores and retrieves document embeddings.
-
-Conversation Memory (LangChain) – Maintains chat history for context-aware responses.
-
-⚙️ APIs & Functionality
-1️⃣ Upload & Process PDFs
-Endpoint: POST /upload
-
-Description: Accepts a PDF file and processes its content using PyPDFLoader.
-
-Response: Returns metadata about the document.
-
-2️⃣ Query Research Papers
-Endpoint: POST /query
-
-Description: Accepts a user question and retrieves relevant text from the PDF using FAISS.
-
-Response: Provides an AI-generated response with references to the original document.
-
-3️⃣ Retrieve Conversation History
-Endpoint: GET /chat-history
-
-Description: Returns previous interactions for context-aware discussions.
-
-Response: List of past user queries and AI responses.
-
-📦 Installation & Setup
+🛠 Installation & Setup
 1️⃣ Clone the Repository
 bash
 Copy
 Edit
-git clone https://github.com/your-username/ResearchGPT.git
+git clone https://github.com/yourusername/ResearchGPT.git
 cd ResearchGPT
 2️⃣ Create a Virtual Environment
 bash
 Copy
 Edit
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate  # MacOS/Linux
+venv\Scripts\activate  # Windows
 3️⃣ Install Dependencies
 bash
 Copy
 Edit
 pip install -r requirements.txt
-4️⃣ Set Up Environment Variables
+4️⃣ Set Up API Keys
 Create a .env file and add your Google Gemini API Key:
 
 ini
 Copy
 Edit
-GEMINI_API_KEY=your_google_api_key
-5️⃣ Run the Application
+5️⃣ Run the App
 bash
 Copy
 Edit
 streamlit run app.py
-The app will be available at http://localhost:8501.
+🎉 Open your browser and go to http://localhost:8501
 
-📌 How It Works
-1️⃣ Upload a Research Paper – The PDF is processed, and embeddings are generated.
-2️⃣ Ask Questions – The chatbot retrieves relevant text using FAISS and LLMs.
-3️⃣ Get Context-Aware Answers – The AI remembers your previous queries and provides intelligent responses.
+🚀 Deployment
+You can deploy ResearchGPT on:
+🔹 Streamlit Cloud (Recommended)
+🔹 Vercel / Render
+🔹 AWS EC2 / GCP App Engine
 
-🔮 Future Improvements
-Support for Multiple File Uploads
+Deploy on Streamlit Cloud
+1️⃣ Push your code to GitHub.
+2️⃣ Go to Streamlit Cloud and connect your repo.
+3️⃣ Add the necessary API keys in the settings.
+4️⃣ Click Deploy – and you're live! 🚀
 
-Integration with More LLMs (GPT-4, Claude, etc.)
+🧠 How It Works
+1️⃣ Load Document: Extracts text from PDFs using PyPDFLoader.
+2️⃣ Generate Embeddings: Converts text into vector embeddings using Google Generative AI.
+3️⃣ Store in FAISS: A vector database stores these embeddings for fast retrieval.
+4️⃣ Ask & Retrieve: AI searches the document, retrieves relevant information, and generates answers.
 
-Multimodal Capabilities (Images, Graphs, etc.)
+🏆 Why Use ResearchGPT?
+🔹 Saves Time – No more manually skimming through papers.
+🔹 AI-Powered Insights – Advanced NLP for smart responses.
+🔹 Seamless & Interactive – Chat-like interface for easy engagement.
+🔹 Open Source – Customize & extend as needed.
 
-This project aims to revolutionize how researchers interact with academic papers—making research faster, smarter, and more accessible. 🚀
+💡 Future Enhancements
+✨ Multi-document support – Upload multiple PDFs for broader research.
+✨ Offline Mode – Run without an internet connection.
+✨ Advanced Summarization – Generate concise paper summaries.
+✨ Citation Generation – Get references for research writing.
 
-Contributions are welcome! Feel free to fork, improve, and submit PRs. 😊
+🤝 Contributing
+We ❤️ contributions!
+
+🔹 Fork the repository.
+🔹 Create a new branch: git checkout -b feature-name.
+🔹 Make your changes & commit: git commit -m "Added feature".
+🔹 Push to GitHub: git push origin feature-name.
+🔹 Open a Pull Request.
