@@ -8,6 +8,7 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 from gtts import gTTS
 import base64
+import re
 
 # Set page config
 st.set_page_config(page_title="ResearchGPT 🔬🤖", page_icon="📚")
@@ -27,7 +28,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.info("Developed by **Dhyan Shah**", icon="💡")
-    st.caption("📌 Version: 1.0.0")
+    st.caption("📌 Version: 2.0.0")
 
 # Set up API Key
 # GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
@@ -132,7 +133,8 @@ if uploaded_file:
                     st.write(answer)
 
                     # ✅ Text-to-Speech here
-                    tts = gTTS(text=answer, lang='en')
+                    clean_answer = re.sub(r"[*_`#>\-]+", "", answer)  # removes markdown-like characters
+                    tts = gTTS(text=clean_answer, lang='en')  # ✅ use the cleaned version
                     audio_path = os.path.join(DATA_DIR, "response.mp3")
                     tts.save(audio_path)
 
