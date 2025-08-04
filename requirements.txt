@@ -66,3 +66,7 @@ sqlparse==0.5.3
 # pocketsphinx – if using offline STT (currently unused)
 # speechrecognition – if re-adding audio-to-text later
 
+streamlit-authenticator 
+PyYAML 
+bcrypt
+passlib

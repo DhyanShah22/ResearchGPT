@@ -31,8 +31,8 @@ with st.sidebar:
     st.caption("📌 Version: 2.0.0")
 
 # Set up API Key
-# GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+# GEMINI_API_KEY = "AIzaSyB4jbxlU5rFCkRh4GL34vPODGBKCMFF0Ys"
 
 # Create data directory
 DATA_DIR = "data"
@@ -87,7 +87,7 @@ if uploaded_file:
     )
 
     chat_model = ChatGoogleGenerativeAI(
-        model="gemini-1.5-pro",
+        model="gemini-2.5-flash-lite",
         google_api_key=GEMINI_API_KEY,
         temperature=temperature,
         credentials=None,
